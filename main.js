@@ -88,4 +88,10 @@ function makeCryptonatorRequest(tickerSymbol, message) {
 
 };
 
-client.login('OTI4MzY4NDEzOTU1NDY5MzEy.YdXwdg.LsVq903nRR5E3Pk8PAmVdXVqCcg'); // Last line of file
+fs.readFile('token.txt', 'utf8', function (err, token) {
+  if (err) {
+    console.log(err);
+  } else {
+    client.login(token); // Last line of file
+  }
+});
